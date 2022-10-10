@@ -50,13 +50,7 @@ export default function Home({pageInfo, experiences, projects, skills, socials})
       <section id="contact" className='snap-start'>
         <ContactMe/>
       </section>
-      <Link href='#hero'>
-      <footer className='sticky p-10 opacity-50 right-5 bottom-5 w-full cursor-pointer justify-center items-center '>
-        { <div>
-            <ArrowUpIcon className='h-8 w-8 rounded-full  hover:text-[#F7AB0A] cursor-pointer'/>
-        </div>}
-      </footer>
-      </Link>
+      
     </div>
   )
 }
