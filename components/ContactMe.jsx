@@ -76,13 +76,7 @@ export default function ContactMe({}) {
           <button type="submit"
             className="bg-[#F7AB0A] py-5 px-10 rounded-md text-black font-bold text-lg">Submit</button>
         </form>
-        <Link href='#hero'>
-      <footer className='flex justify-center items-center'>
-        { <div>
-            <ArrowUpIcon className='h-8 w-8 rounded-full  hover:text-[#F7AB0A] cursor-pointer'/>
-        </div>}
-      </footer>
-      </Link>
+       
       </div>
     </div>
   );
