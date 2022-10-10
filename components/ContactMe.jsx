@@ -4,6 +4,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { useRef } from "react";
 import emailjs from 'emailjs-com'
 import { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 
 export default function ContactMe({}) {
@@ -15,6 +16,18 @@ export default function ContactMe({}) {
 
     emailjs.sendForm('service_5y1rroh', 'template_wb2o67x', form.current, 'Rz6bzaygqNZJLIE1l')
       .then((result) => {
+        toast.success("Thanks for contacting me!", {
+          style: {
+            border: '1px solid #F7AB0A',
+            padding: '16px',
+            borderRadius: '40px',
+            color: '#F7AB0A',
+          },
+          iconTheme: {
+            primary: '#F7AB0A',
+            secondary: '#FFFAEE',
+          },
+        });
           console.log(result.text);
           setDone(true);
       }, (error) => {
@@ -22,7 +35,12 @@ export default function ContactMe({}) {
       });
   };
   return (
+    
     <div className="h-screen flex relative flex-col text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center">
+      <Toaster
+  position="top-center"
+  reverseOrder={false}
+/>
       <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500">
         Contact
       </h3>
@@ -55,13 +73,8 @@ export default function ContactMe({}) {
             placeholder="Message"
             className="contactInput resize-none"
           />
-          { done ?<span className="bg-[#F7AB0A] py-5 px-10 rounded-md text-black font-bold text-md text-center">Thanks For Contacting Me!</span> : <button
-            type="submit"
-            className="bg-[#F7AB0A] py-5 px-10 rounded-md text-black font-bold text-lg"
-          >
-            Submit
-          </button>
-          }
+          <button type="submit"
+            className="bg-[#F7AB0A] py-5 px-10 rounded-md text-black font-bold text-lg">Submit</button>
         </form>
       </div>
     </div>
