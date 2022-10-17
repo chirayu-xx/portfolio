@@ -84,8 +84,8 @@ export async function getStaticProps(){
     const skills = await client.fetch(skillQuery);
     const projects = await client.fetch(projectQuery);
     const socials = await client.fetch(socialQuery);
-
     return{
-      props:{pageInfo, experiences, projects, skills, socials}
+      props:{pageInfo, experiences, projects, skills, socials},
+      revalidate:10
     }
 }
