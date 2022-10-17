@@ -18,7 +18,7 @@ export default function Projects({projects}) {
             {projects.map((project,i) => (
                 <div key={project._id} className='w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen '>
                     <h5 className='uppercase tracking-[20px] text-gray-500'>Click to view the Project</h5>
-                    <a href={project.linkToBuild} target="_blank">
+                    <a href={project.linkToBuild} target="_blank" rel="noreferrer">
                     <motion.img
                     initial={{
                         opacity:0,
