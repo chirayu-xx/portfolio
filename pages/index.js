@@ -24,7 +24,7 @@ export default function Home({pageInfo, experiences, projects, skills, socials})
 
       {/* Hero  */}
       <section id='hero' className='snap-start'>
-        <Hero pageInfo = {pageInfo}/>
+        <Hero pageInfo = {pageInfo} socials = {socials}/>
       </section>
 
       {/* About  */}

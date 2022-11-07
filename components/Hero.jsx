@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 import { urlFor } from '../lib/client'
 
-export default function Hero({pageInfo}) {
+export default function Hero({pageInfo, socials}) {
     const [text,count] = useTypewriter({
         words:[`${pageInfo.name}.config.js`,
         "Developer.jsx",
@@ -41,7 +41,7 @@ export default function Hero({pageInfo}) {
                     </Link>
                 </div>
                 <Link
-                href='https://drive.google.com/file/d/1HUynUK5NN79JD7s0ZhZzXkWZqK46qvkc/view?usp=sharing'
+                href={socials[4].url}
                 target={'_blank'}
                 >
                     <button className='heroButton text-lg m-5'>
