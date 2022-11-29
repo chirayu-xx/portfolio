@@ -1,7 +1,12 @@
 import '../styles/globals.css'
-
+import SEO from '@bradgarropy/next-seo'
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return <>
+  <SEO title="Chirayu-Portfolio" description="My portfolio" keywords={['chirayu shah', 'chirayu.tech', 'portfolio website']}
+  icon='/favicon.ico'
+  />
+  <Component {...pageProps} />
+  </>
 }
 
 export default MyApp

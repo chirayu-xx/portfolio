@@ -17,6 +17,11 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@bradgarropy/next-seo@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@bradgarropy/next-seo/-/next-seo-1.2.0.tgz#0c79eab154b887ec5ac5d9e744c5e3dc54354c2f"
+  integrity sha512-AdSZOJw3NIvTxKoRv5IDX/WFhLi7Y2bvmW0OVWLf/rzIJRONms3MZ+aJz2u5Hv2FMgl4cT2Y/4xxEuOmB5u03w==
+
 "@emotion/is-prop-valid@^0.8.2":
   version "0.8.8"
   resolved "https://registry.yarnpkg.com/@emotion/is-prop-valid/-/is-prop-valid-0.8.8.tgz#db28b1c4368a259b60a97311d6a952d4fd01ac1a"
