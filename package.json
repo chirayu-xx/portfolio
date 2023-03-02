@@ -23,6 +23,7 @@
     "react-dom": "18.2.0",
     "react-hook-form": "^7.36.1",
     "react-hot-toast": "^2.4.0",
+    "react-scroll": "^1.8.9",
     "react-simple-typewriter": "^4.0.2",
     "react-social-icons": "^5.14.0"
   },

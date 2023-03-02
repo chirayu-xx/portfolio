@@ -12,6 +12,7 @@ import {ArrowUpIcon} from '@heroicons/react/24/solid'
 import { client } from '../lib/client'
 
 export default function Home({pageInfo, experiences, projects, skills, socials}) {
+
   return (
     <div className='bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-x-hidden overflow-y-scroll z-0 scroll-smooth scrollbar-thin scrollbar-track-transparent scrollbar-thumb-[#F7AB0A]'>
       <Head>
@@ -51,11 +52,7 @@ export default function Home({pageInfo, experiences, projects, skills, socials})
         <ContactMe/>
       </section>
       <Link href='#hero'>
-      <footer className='flex justify-center items-center'>
-        { <div>
-            <ArrowUpIcon className='h-8 w-8 rounded-full  hover:text-[#F7AB0A] cursor-pointer'/>
-        </div>}
-      </footer>
+            <ArrowUpIcon className='absolute block bottom-1 left-1 md:bottom-10 md:left-10 h-8 w-8 rounded-full  hover:text-[#F7AB0A] cursor-pointer'/>
       </Link>
     </div>
   )

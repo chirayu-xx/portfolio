@@ -41,11 +41,11 @@ export default function ContactMe({}) {
   position="top-center"
   reverseOrder={false}
 />
-      <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500">
+      <h3 className="absolute hidden md:inline top-10 md:top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
         Contact
       </h3>
-      <div className="mt-10 flex flex-col space-y-10">
-        <h4 className="text-4xl font-semibold text-center">
+      <div className="flex flex-col md:mt-20 space-y-10">
+        <h4 className="text-xl md:text-4xl font-semibold text-center">
           Got You!!{" "}
           <span className="decoration-[#F7AB0A]/50 underline">Lets Talk</span>
         </h4>
@@ -63,20 +63,19 @@ export default function ContactMe({}) {
             <p>Chandigarh, India</p>
           </div>
         </div>
-        <form ref={form} onSubmit={sendEmail} className="flex flex-col space-y-2 w-fit mx-auto">
-          <div className="flex space-x-2">
+        <form ref={form} onSubmit={sendEmail} className="flex flex-col space-y-2 w-fit">
+          <div className="flex space-x-2 w-80 md:w-full">
             <input name="user_name" placeholder="Name" className="contactInput" type="text" />
             <input name="user_email" placeholder="Email" className="contactInput" type="email" />
           </div>
-          <input placeholder="Subject" className="contactInput" type="text" />
+          <input placeholder="Subject" className="contactInput w-96 md:w-full mx-auto" type="text" />
           <textarea {...register('message')}
             placeholder="Message"
             className="contactInput resize-none"
           />
           <button type="submit"
             className="bg-[#F7AB0A] py-5 px-10 rounded-md text-black font-bold text-lg">Submit</button>
-        </form>
-       
+        </form> 
       </div>
     </div>
   );

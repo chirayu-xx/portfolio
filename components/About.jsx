@@ -13,9 +13,9 @@ export default function About({pageInfo}) {
     whileInView={{opacity:1}}
     transition={{duration:1.4}}
     className='h-screen flex relative flex-col text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center'>
-      <h3 className='absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl'>About</h3>
+      <h3 className='absolute top-16 md:top-24 uppercase tracking-[20px] text-gray-500 text-2xl'>About</h3>
       <motion.img 
-      className='-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h-96'
+      className='-mb-44 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h-96'
       initial={{
         x:-200,
         opacity:0,
@@ -30,8 +30,8 @@ export default function About({pageInfo}) {
       viewport={{once:true}}
       src={urlFor(pageInfo.profilePic).url()}
       />
-      <div className='space-y-10 mx-0 md:px-10'>
-        <h4 className='text-4xl font-semibold'>Here is a <span className='text-[#F7AB0A]/50'>Something</span> About Me</h4>
+      <div className='space-y-6 mt-20 mx-0 md:px-10'>
+        <h4 className='text-xl md:text-4xl font-semibold'>Here is a <span className='text-[#F7AB0A]/50'>Something</span> About Me</h4>
         <p className='text-base'>
           {pageInfo.backgroundInformation}
         </p>

@@ -2,7 +2,7 @@ import React from 'react'
 import {Cursor, useTypewriter} from 'react-simple-typewriter'
 import BackgroundCircles from './BackgroundCircles'
 import Link from 'next/link'
-
+import Image from 'next/image'
 import { urlFor } from '../lib/client'
 
 export default function Hero({pageInfo, socials}) {
@@ -16,9 +16,9 @@ export default function Hero({pageInfo, socials}) {
   return (
     <div className='h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden'>
         <BackgroundCircles/>
-            <img
+            <Image
             className='relative rounded-full h-32 w-32 mx-auto object-cover'
-            src={urlFor(pageInfo.heroImage).url()} alt=''/>
+            src={urlFor(pageInfo.heroImage).url()} alt='' height={120} width={120}/>
             <div className='z-20'>
                 <h2 className='text-sm uppercase text-gray-500 pb-2 tracking-[15px]'>{pageInfo.role}
                 </h2>
@@ -41,8 +41,8 @@ export default function Hero({pageInfo, socials}) {
                     </Link>
                 </div>
                 <Link
-                href={socials[4].url}
-                target={'_blank'}
+                href= {'/Chirayu_Shah_Resume.pdf'}
+                download
                 >
                     <button className='heroButton text-lg m-5'>
                     Resume

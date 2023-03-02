@@ -32,6 +32,7 @@ export default function Header({socials}) {
                 target='_blank' 
                 fgColor='gray'
                  bgColor='transparent'
+                 className='hover:scale-105'
                  />
             ))}
         </motion.div>
@@ -53,14 +54,14 @@ export default function Header({socials}) {
         transition={{
             duration:1.5,
         }}
-        className='flex flex-row items-center text-gray-300 cursor-pointer'>
+        className='flex flex-row items-center text-gray-300 cursor-pointer group'>
                 <SocialIcon
-                className='cursor-pointer'
+                className='cursor-pointer group-hover:scale-105'
                 network='email'
                 fgColor='gray'
                 bgColor='transparent'
                 />
-            <p className='uppercase hidden md:inline-flex text-sm text-gray-400'>Get In Touch</p>
+            <p className='uppercase hidden md:inline-flex text-sm text-gray-400 group-hover:scale-105'>Get In Touch</p>
             </motion.div>
         </Link>
     </header>
