@@ -18,15 +18,15 @@ export default function ContactMe({}) {
     const subject = form.current.querySelector('#subject').value;
     const message = form.current.querySelector('#message').value;
     try{
-      const loadingToast = toast.loading('Sending email...');
-
+      
       if(!name || !email || !subject || !message){
         toast.error("Fill all the fields")
-    }
-    else if(!email.includes('@')){
-      toast.error("Email not valid")
-    }
-    else{
+      }
+      else if(!email.includes('@')){
+        toast.error("Email not valid")
+      }
+      else{
+      const loadingToast = toast.loading('Sending email...');
     // const loadingToast = toast.loading('Sending email...');
     emailjs.sendForm('service_5y1rroh', 'template_wb2o67x', form.current, 'Rz6bzaygqNZJLIE1l')
       .then((result) => {
