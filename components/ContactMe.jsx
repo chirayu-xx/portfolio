@@ -11,12 +11,27 @@ import Link from "next/link";
 export default function ContactMe({}) {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const form = useRef();
-  const [done, setDone] = useState(false)
+  const [done, setDone] = useState(false)  
   const sendEmail = (e) => {
     e.preventDefault();
+    const name = form.current.querySelector('#user_name').value;
+    const email = form.current.querySelector('#user_email').value;
+    const subject = form.current.querySelector('#subject').value;
+    const message = form.current.querySelector('#message').value;
+    const loadingToast = toast.loading('Sending email...');
+    try{
+
+      if(!name || !email || !subject || !message){
+        toast.error("Fill all the fields")
+    }
+    else if(!email.includes('@')){
+      toast.error("Email not valid")
+    }
+    else{
+    // const loadingToast = toast.loading('Sending email...');
     emailjs.sendForm('service_5y1rroh', 'template_wb2o67x', form.current, 'Rz6bzaygqNZJLIE1l')
       .then((result) => {
-        toast.success("Thanks for contacting me!", {
+        toast.success(`Thanks for contacting ${name}!`, {
           style: {
             border: '1px solid #F7AB0A',
             padding: '16px',
@@ -32,7 +47,14 @@ export default function ContactMe({}) {
           setDone(true);
       }, (error) => {
           console.log(error.text);
-      });
+        });
+      }
+    }catch(err){
+      toast.error(`Error sending email: ${error.message}`);
+    }
+    finally{
+      toast.dismiss(loadingToast);
+    }
   };
   return (
     
@@ -65,12 +87,13 @@ export default function ContactMe({}) {
         </div>
         <form ref={form} onSubmit={sendEmail} className="flex flex-col space-y-2 w-fit">
           <div className="flex space-x-2 w-80 md:w-full">
-            <input name="user_name" placeholder="Name" className="contactInput" type="text" />
-            <input name="user_email" placeholder="Email" className="contactInput" type="email" />
+            <input name="user_name" id="user_name" placeholder="Name" className="contactInput" type="text" />
+            <input name="user_email" id="user_email" placeholder="Email" className="contactInput" type="text"/>
           </div>
-          <input placeholder="Subject" className="contactInput w-96 md:w-full mx-auto" type="text" />
+          <input placeholder="Subject" id="subject" className="contactInput w-96 md:w-full mx-auto" type="text" />
           <textarea {...register('message')}
             placeholder="Message"
+            id="message"
             className="contactInput resize-none"
           />
           <button type="submit"
