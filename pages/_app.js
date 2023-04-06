@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }) {
   icon='/favicon.ico'
   />
   <Component {...pageProps} />
-  <Analytics/>
+  <Analytics debug/>
   </>
 }
 
