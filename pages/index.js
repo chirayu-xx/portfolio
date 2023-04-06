@@ -8,7 +8,6 @@ import Hero from '../components/Hero'
 import Projects from '../components/Projects'
 import Skills from '../components/Skills'
 import WorkExperience from '../components/WorkExperience'
-import {ArrowUpIcon} from '@heroicons/react/24/solid'
 import { client } from '../lib/client'
 
 export default function Home({pageInfo, experiences, projects, skills, socials}) {
@@ -51,9 +50,9 @@ export default function Home({pageInfo, experiences, projects, skills, socials})
       <section id="contact" className='snap-start'>
         <ContactMe/>
       </section>
-      <Link href='#hero'>
+      {/* <Link href='#hero'>
             <ArrowUpIcon className='absolute block bottom-1 left-1 md:bottom-10 md:left-10 h-8 w-8 rounded-full  hover:text-[#F7AB0A] cursor-pointer'/>
-      </Link>
+      </Link> */}
     </div>
   )
 }
