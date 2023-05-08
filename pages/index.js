@@ -59,15 +59,15 @@ export default function Home({pageInfo, experiences, projects, skills, socials})
 
 export async function getStaticProps(){
     const pageInfoQuery =  '*[_type == "pageInfo"][0]'
-    const experienceQuery = `*[_type == "experience"]{
+    const experienceQuery = `*[_type == "experience"]  | order(_createdAt desc){
       ...,
       technologies[]->
     }`
     const projectQuery = `
-    *[_type == "project"]{
+    *[_type == "project"] | order(_createdAt desc){
       ...,
       technologies[]->
-    }
+    } 
     `
     const skillQuery = `
     *[_type == "skill"]
